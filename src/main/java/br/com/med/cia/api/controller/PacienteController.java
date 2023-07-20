@@ -1,9 +1,9 @@
 package br.com.med.cia.api.controller;
 
-import br.com.med.cia.api.paciente.DadosCadastroPaciente;
-import br.com.med.cia.api.paciente.DadosListagemPaciente;
-import br.com.med.cia.api.paciente.Paciente;
-import br.com.med.cia.api.paciente.PacienteRepository;
+import br.com.med.cia.api.domain.paciente.DadosCadastroPaciente;
+import br.com.med.cia.api.domain.paciente.DadosListagemPaciente;
+import br.com.med.cia.api.domain.paciente.Paciente;
+import br.com.med.cia.api.domain.paciente.PacienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -26,7 +26,7 @@ public class PacienteController {
     }
 
     @GetMapping
-    public Page<DadosListagemPaciente> listar(@PageableDefault(size=10, page=0, sort={"nome"}) Pageable paginacao) {
+    public Page<DadosListagemPaciente> listar(@PageableDefault(sort={"nome"}) Pageable paginacao) {
         return repository.findAll(paginacao).map(DadosListagemPaciente::new);
     }
 }

@@ -1,7 +1,6 @@
-package br.com.med.cia.api.paciente;
+package br.com.med.cia.api.domain.paciente;
 
-import br.com.med.cia.api.endereco.DadosEndereco;
-import br.com.med.cia.api.endereco.Endereco;
+import br.com.med.cia.api.domain.endereco.Endereco;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;

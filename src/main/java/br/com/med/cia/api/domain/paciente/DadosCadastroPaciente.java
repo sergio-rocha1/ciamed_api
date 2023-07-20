@@ -1,7 +1,6 @@
-package br.com.med.cia.api.paciente;
+package br.com.med.cia.api.domain.paciente;
 
-import br.com.med.cia.api.endereco.DadosEndereco;
-import lombok.AllArgsConstructor;
+import br.com.med.cia.api.domain.endereco.DadosEndereco;
 
 import javax.validation.Valid;
 import javax.validation.constraints.Email;
@@ -18,7 +17,7 @@ public record DadosCadastroPaciente(
         @NotBlank
         String telefone,
         @NotBlank
-        @Pattern(regexp = "\\d{3}\\.?\\d{3}\\.?\\d{3}\\-?\\d{2}")
+        @Pattern(regexp = "\\d{3}\\.?\\d{3}\\.?\\d{3}-?\\d{2}")
         String cpf,
         @NotNull @Valid DadosEndereco endereco) {
 }

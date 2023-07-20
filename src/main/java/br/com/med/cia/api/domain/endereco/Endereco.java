@@ -1,4 +1,4 @@
-package br.com.med.cia.api.endereco;
+package br.com.med.cia.api.domain.endereco;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

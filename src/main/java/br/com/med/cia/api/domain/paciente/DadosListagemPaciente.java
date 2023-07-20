@@ -1,4 +1,4 @@
-package br.com.med.cia.api.paciente;
+package br.com.med.cia.api.domain.paciente;
 
 public record DadosListagemPaciente(String nome, String email, String cpf) {
     public DadosListagemPaciente(Paciente paciente) {

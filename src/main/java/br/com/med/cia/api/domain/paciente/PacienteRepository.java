@@ -1,4 +1,4 @@
-package br.com.med.cia.api.paciente;
+package br.com.med.cia.api.domain.paciente;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

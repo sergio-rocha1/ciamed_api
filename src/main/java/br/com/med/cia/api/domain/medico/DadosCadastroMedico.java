@@ -1,6 +1,6 @@
-package br.com.med.cia.api.medico;
+package br.com.med.cia.api.domain.medico;
 
-import br.com.med.cia.api.endereco.DadosEndereco;
+import br.com.med.cia.api.domain.endereco.DadosEndereco;
 
 import javax.validation.Valid;
 import javax.validation.constraints.Email;
