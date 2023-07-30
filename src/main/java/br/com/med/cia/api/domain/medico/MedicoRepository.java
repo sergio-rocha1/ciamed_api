@@ -6,11 +6,12 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 public interface MedicoRepository extends JpaRepository<Medico, Long> {
     Page<Medico> findAllByAtivoTrue(Pageable paginacao);
 
-    @Query(value = """
+    @Query("""
                 select m from Medico m
                 where
                 m.ativo = true
@@ -22,8 +23,13 @@ public interface MedicoRepository extends JpaRepository<Medico, Long> {
                     where
                     c.data = :data
                 )
-                order by rand()
-                limit 1
-                """, nativeQuery = true)
-    Medico escolherMedicoAletorioLivreNaData(Especialidade especialidade, LocalDateTime data);
+                ORDER BY FUNCTION('RAND')
+                """)
+    List<Medico> escolherMedicoAletorioLivreNaData(Especialidade especialidade, LocalDateTime data);
+
+    @Query("""
+                select m.ativo from Medico m
+                where m.id = :id 
+            """)
+    Boolean findAtivoById(Long id);
 }
